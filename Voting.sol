@@ -9,4 +9,8 @@ contract Voting {
     function Voting(bytes32[] candidateNames) {
         cnadidateList = candidateNames
     }
+
+    function totalVotesFor(bytes32 candidate) returns(uint8)
+
+    return votesReceived[candidate];
 }
