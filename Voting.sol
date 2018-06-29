@@ -10,7 +10,12 @@ contract Voting {
         cnadidateList = candidateNames
     }
 
-    function totalVotesFor(bytes32 candidate) returns(uint8)
+    function totalVotesFor(bytes32 candidate) returns(uint8) {
+        return votesReceived[candidate];
+    }
 
-    return votesReceived[candidate];
+    function voteForCandidate(bytes32 candidate) {
+        if(validCandidate(candidate) == false) throw;
+        votesReceived[candidate] += 1;
+    }
 }
